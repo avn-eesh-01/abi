@@ -1268,8 +1268,14 @@ section {
 
 .service-card:hover .service-title,
 .service-card:hover .service-desc,
-.service-card:hover .service-link {
-    color: var(--primary-50);
+.service-card:hover .service-link,
+.service-card:hover .service-points li {
+    color: #ffffff;
+}
+
+.service-card:hover .service-points li::before {
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.14);
 }
 
 .service-card:hover::after {
@@ -2302,7 +2308,7 @@ section {
     padding: 110px 0 0;
     background: #ffffff;
     overflow: hidden;
-    min-height: 700px;
+    min-height: 100vh;
 }
 
 .categories-hero-bg {
@@ -2331,7 +2337,7 @@ section {
     right: 0;
     top: 0;
     width: 62%;
-    height: calc(100% - 120px);
+    height: 100vh;
     object-fit: cover;
     object-position: center 35%;
     z-index: 1;
@@ -2362,7 +2368,10 @@ section {
 .categories-hero-main {
     position: relative;
     z-index: 2;
-    padding-bottom: var(--space-3xl);
+    min-height: 100vh;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
 }
 
 .categories-page-hero-grid {
@@ -2370,7 +2379,8 @@ section {
     grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr);
     gap: var(--space-xl);
     align-items: center;
-    min-height: 520px;
+    min-height: 0;
+    width: 100%;
 }
 
 .categories-hero-tag {
@@ -3154,6 +3164,142 @@ section {
     color: var(--gray-800);
     line-height: 1.45;
 }
+
+/* College services directory */
+.college-services-section {
+    background:
+        radial-gradient(circle at 0 18%, rgba(214, 229, 255, .72), transparent 23%),
+        radial-gradient(circle at 100% 74%, rgba(226, 237, 255, .68), transparent 25%),
+        #f8fbff !important;
+}
+
+.college-services-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    margin-bottom: 30px;
+}
+
+.college-services-header .section-title { margin: 0 0 12px; }
+
+.college-services-header p {
+    max-width: 620px;
+    margin: 0;
+    color: var(--gray-600);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.college-services-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #084ad3;
+    font-size: .92rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.college-services-link span,
+.college-service-arrow {
+    display: grid;
+    place-items: center;
+    border: 1.5px solid #cad9f4;
+    border-radius: 50%;
+    color: #1256dd;
+}
+
+.college-services-link span { width: 34px; height: 34px; }
+
+.college-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 24px;
+}
+
+.college-service-card {
+    display: grid;
+    grid-template-columns: 94px minmax(0, 1fr) 34px;
+    align-items: center;
+    gap: 20px;
+    min-height: 174px;
+    padding: 24px;
+    border: 1px solid #dce6f5;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .93);
+    box-shadow: 0 8px 22px rgba(35, 73, 137, .05);
+    color: inherit;
+    text-decoration: none;
+    transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.college-service-card:hover {
+    transform: translateY(-5px);
+    border-color: #abc8f7;
+    box-shadow: 0 18px 30px rgba(29, 78, 216, .12);
+}
+
+.college-service-icon {
+    display: grid;
+    width: 94px;
+    height: 94px;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f1f6ff, #e2edff);
+    color: #1760df;
+    font-size: 2.1rem;
+}
+
+.college-service-copy { display: grid; gap: 8px; }
+
+.college-service-copy strong {
+    color: #081b4c;
+    font-family: var(--font-display);
+    font-size: 1.04rem;
+    line-height: 1.35;
+}
+
+.college-service-copy small {
+    color: #3e5278;
+    font-size: .88rem;
+    line-height: 1.55;
+}
+
+.college-service-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: .86rem;
+    transition: background var(--transition-base), color var(--transition-base);
+}
+
+.college-service-card:hover .college-service-arrow { background: #1557d9; border-color: #1557d9; color: #fff; }
+
+.college-services-assurances {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 28px;
+    padding: 24px 18px;
+    border: 1px solid #dce6f5;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 8px 22px rgba(35, 73, 137, .04);
+}
+
+.college-services-assurances > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 22px;
+}
+
+.college-services-assurances > div + div { border-left: 1px solid #e0e8f5; }
+
+.college-services-assurances i { color: #1256dd; font-size: 1.65rem; }
+.college-services-assurances span { display: grid; gap: 5px; }
+.college-services-assurances strong { color: #0b1e50; font-size: .84rem; }
+.college-services-assurances small { color: #42587f; font-size: .73rem; }
 
 .university-showcase-grid {
     display: grid;
@@ -4388,6 +4534,10 @@ section {
         min-height: auto;
     }
 
+    .categories-hero-main {
+        min-height: auto;
+    }
+
     .categories-page-title {
         font-size: 2.75rem;
     }
@@ -4768,6 +4918,21 @@ section {
     .categories-tools-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .college-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .college-services-assurances { grid-template-columns: repeat(2, 1fr); gap: 22px 0; }
+    .college-services-assurances > div:nth-child(3) { border-left: 0; }
+}
+
+@media (max-width: 680px) {
+    .college-services-header { align-items: flex-start; flex-direction: column; }
+    .college-services-grid { grid-template-columns: 1fr; gap: 14px; }
+    .college-service-card { grid-template-columns: 70px minmax(0, 1fr) 30px; gap: 15px; min-height: 0; padding: 18px; }
+    .college-service-icon { width: 70px; height: 70px; font-size: 1.55rem; }
+    .college-service-arrow { width: 30px; height: 30px; }
+    .college-services-assurances { grid-template-columns: 1fr; padding: 22px 16px; gap: 18px; }
+    .college-services-assurances > div { padding: 0 6px; }
+    .college-services-assurances > div + div { border-top: 1px solid #e0e8f5; border-left: 0; padding-top: 18px; }
 }
 
 @media (max-width: 600px) {
