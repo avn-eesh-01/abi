@@ -1772,6 +1772,7 @@ section {
 
 .expertise-section {
     padding: 0 0 var(--space-4xl);
+    margin-top: var(--space-4xl);
     background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
@@ -3305,10 +3306,11 @@ section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
+    align-items: stretch;
 }
 
 .university-showcase-card {
-    min-height: 310px;
+    height: 310px;
     border-radius: 24px;
     overflow: hidden;
     position: relative;
@@ -3356,6 +3358,7 @@ section {
 
 .why-abi-section {
     padding: var(--space-4xl) 0;
+    margin-top: var(--space-4xl);
     background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
 }
 
@@ -4419,7 +4422,7 @@ section {
     }
 
     .university-showcase-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .why-abi-grid {
