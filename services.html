@@ -309,34 +309,43 @@
                         <span class="coverage-orbit-icon coverage-orbit-icon-users"><i class="fas fa-users"></i></span>
                         <svg class="coverage-campus" viewBox="0 0 360 250" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
-                                <linearGradient id="campusWall" x1="180" y1="55" x2="180" y2="210" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#F8FBFF"/><stop offset="1" stop-color="#B9C9EE"/>
+                                <linearGradient id="campusFacade" x1="180" y1="85" x2="180" y2="218" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#F3F6FB"/><stop offset=".55" stop-color="#D4DDED"/><stop offset="1" stop-color="#9CAED0"/>
                                 </linearGradient>
-                                <linearGradient id="campusRoof" x1="180" y1="34" x2="180" y2="92" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#F7FAFF"/><stop offset="1" stop-color="#9CAFE1"/>
+                                <linearGradient id="campusPediment" x1="180" y1="43" x2="180" y2="110" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FCFDFE"/><stop offset="1" stop-color="#B6C4DD"/>
                                 </linearGradient>
+                                <linearGradient id="campusGlass" x1="0" y1="0" x2="1" y2="1">
+                                    <stop stop-color="#607FAC"/><stop offset="1" stop-color="#173765"/>
+                                </linearGradient>
+                                <filter id="campusSoftShadow" x="20" y="174" width="320" height="65" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="8"/></filter>
                             </defs>
-                            <ellipse cx="180" cy="226" rx="154" ry="13" fill="#071C4B" opacity=".7"/>
-                            <path d="M31 216H329" stroke="#5377C5" stroke-width="3" stroke-linecap="round"/>
-                            <path d="M64 120H296V212H64V120Z" fill="url(#campusWall)" stroke="#173B89" stroke-width="4"/>
-                            <path d="M101 91H259V212H101V91Z" fill="#EAF1FF" stroke="#173B89" stroke-width="4"/>
-                            <path d="M88 91L180 39L272 91H88Z" fill="url(#campusRoof)" stroke="#173B89" stroke-width="4" stroke-linejoin="round"/>
-                            <path d="M109 104H251" stroke="#173B89" stroke-width="5"/>
-                            <circle cx="180" cy="70" r="11" fill="#2E63C9" stroke="#173B89" stroke-width="3"/>
-                            <path d="M180 39V13" stroke="#173B89" stroke-width="4" stroke-linecap="round"/>
-                            <path d="M180 13C193 8 202 14 211 12V28C201 31 192 25 180 30V13Z" fill="#2563EB"/>
-                            <g fill="#1D4A9F" stroke="#102D6D" stroke-width="2">
-                                <rect x="78" y="140" width="18" height="30" rx="8"/><rect x="112" y="140" width="18" height="30" rx="8"/>
-                                <rect x="230" y="140" width="18" height="30" rx="8"/><rect x="264" y="140" width="18" height="30" rx="8"/>
-                                <rect x="78" y="181" width="18" height="22" rx="2"/><rect x="112" y="181" width="18" height="22" rx="2"/>
-                                <rect x="230" y="181" width="18" height="22" rx="2"/><rect x="264" y="181" width="18" height="22" rx="2"/>
+                            <ellipse cx="180" cy="220" rx="140" ry="11" fill="#020E2A" opacity=".52" filter="url(#campusSoftShadow)"/>
+                            <path d="M35 216H325" stroke="#7D9DCE" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+                            <path d="M57 212H303L287 219H73L57 212Z" fill="#7895C5" opacity=".72"/>
+                            <path d="M68 119H292V211H68V119Z" fill="url(#campusFacade)"/>
+                            <path d="M68 119H292V123H68V119Z" fill="#738DB8"/>
+                            <path d="M92 105H268V211H92V105Z" fill="#E5EAF3"/>
+                            <path d="M76 116L180 53L284 116H76Z" fill="url(#campusPediment)"/>
+                            <path d="M76 116L180 53L284 116" stroke="#6E88B5" stroke-width="2.5" stroke-linejoin="round"/>
+                            <path d="M99 121H261" stroke="#7690BA" stroke-width="3"/>
+                            <path d="M180 53V27" stroke="#90A7CB" stroke-width="2"/>
+                            <path d="M180 27C192 23 202 28 212 26V41C202 43 191 38 180 42V27Z" fill="#2D63B8"/>
+                            <circle cx="180" cy="85" r="13" fill="#E7EDF7" stroke="#7790BA" stroke-width="2"/>
+                            <path d="M174 85H186M180 79V91" stroke="#426697" stroke-width="1.5" opacity=".8"/>
+                            <g fill="url(#campusGlass)">
+                                <path d="M78 139H94V169H78V139Z"/><path d="M105 139H121V169H105V139Z"/>
+                                <path d="M239 139H255V169H239V139Z"/><path d="M266 139H282V169H266V139Z"/>
+                                <path d="M78 180H94V201H78V180Z"/><path d="M105 180H121V201H105V180Z"/>
+                                <path d="M239 180H255V201H239V180Z"/><path d="M266 180H282V201H266V180Z"/>
                             </g>
-                            <g fill="#F8FBFF" stroke="#173B89" stroke-width="3">
-                                <rect x="128" y="122" width="14" height="73"/><rect x="155" y="122" width="14" height="73"/>
-                                <rect x="191" y="122" width="14" height="73"/><rect x="218" y="122" width="14" height="73"/>
+                            <g fill="#F7F9FC" stroke="#778FB6" stroke-width="1.5">
+                                <path d="M125 125H140V197H125V125Z"/><path d="M151 125H166V197H151V125Z"/>
+                                <path d="M194 125H209V197H194V125Z"/><path d="M220 125H235V197H220V125Z"/>
                             </g>
-                            <path d="M166 165C166 153 172 146 180 146C188 146 194 153 194 165V205H166V165Z" fill="#173B89"/>
-                            <path d="M116 195H244V204H116V195ZM106 204H254V212H106V204ZM95 212H265V219H95V212Z" fill="#C9D7F6" stroke="#173B89" stroke-width="2"/>
+                            <path d="M166 200V166C166 156 172 149 180 149C188 149 194 156 194 166V200H166Z" fill="#294B7C"/>
+                            <path d="M109 198H251V204H109V198ZM99 204H261V211H99V204ZM88 211H272V217H88V211Z" fill="#C4D0E5"/>
+                            <path d="M100 198H260M90 211H270" stroke="#6E88B5" stroke-width="1.5"/>
                         </svg>
                     </div>
                 </div>
@@ -377,76 +386,104 @@
             </div>
             <div class="process-grid">
                 <div class="process-step">
+                    <div class="step-content step-content-left">
+                        <h3 class="step-title">Assessment</h3>
+                        <p class="step-desc">We review the institution type, objective, current status, and applicable norms.</p>
+                    </div>
                     <div class="step-icon-wrap">
                         <div class="step-icon"><i class="fas fa-comments"></i></div>
                         <span class="step-number">01</span>
                     </div>
-                    <h3 class="step-title">Assessment</h3>
-                    <p class="step-desc">We review the institution type, objective, current status, and applicable norms.</p>
+                    <div class="step-content step-content-right"></div>
                 </div>
-                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
                 <div class="process-step">
+                    <div class="step-content step-content-left"></div>
                     <div class="step-icon-wrap">
                         <div class="step-icon"><i class="fas fa-list-check"></i></div>
                         <span class="step-number">02</span>
                     </div>
-                    <h3 class="step-title">Gap Mapping</h3>
-                    <p class="step-desc">We identify documentation, infrastructure, staffing, and compliance gaps.</p>
+                    <div class="step-content step-content-right">
+                        <h3 class="step-title">Gap Mapping</h3>
+                        <p class="step-desc">We identify documentation, infrastructure, staffing, and compliance gaps.</p>
+                    </div>
                 </div>
-                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
                 <div class="process-step">
+                    <div class="step-content step-content-left">
+                        <h3 class="step-title">Preparation</h3>
+                        <p class="step-desc">Applications, annexures, reports, and legal documents are organized and drafted.</p>
+                    </div>
                     <div class="step-icon-wrap">
                         <div class="step-icon"><i class="fas fa-file-pen"></i></div>
                         <span class="step-number">03</span>
                     </div>
-                    <h3 class="step-title">Preparation</h3>
-                    <p class="step-desc">Applications, annexures, reports, and legal documents are organized and drafted.</p>
+                    <div class="step-content step-content-right"></div>
                 </div>
-                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
                 <div class="process-step">
+                    <div class="step-content step-content-left"></div>
                     <div class="step-icon-wrap">
                         <div class="step-icon"><i class="fas fa-paper-plane"></i></div>
                         <span class="step-number">04</span>
                     </div>
-                    <h3 class="step-title">Submission</h3>
-                    <p class="step-desc">We support portal filing, departmental correspondence, and clarification cycles.</p>
+                    <div class="step-content step-content-right">
+                        <h3 class="step-title">Submission</h3>
+                        <p class="step-desc">We support portal filing, departmental correspondence, and clarification cycles.</p>
+                    </div>
                 </div>
-                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
                 <div class="process-step">
+                    <div class="step-content step-content-left">
+                        <h3 class="step-title">Inspection</h3>
+                        <p class="step-desc">Mock runs and readiness checks help the institution face official review confidently.</p>
+                    </div>
                     <div class="step-icon-wrap">
                         <div class="step-icon"><i class="fas fa-magnifying-glass"></i></div>
                         <span class="step-number">05</span>
                     </div>
-                    <h3 class="step-title">Inspection</h3>
-                    <p class="step-desc">Mock runs and readiness checks help the institution face official review confidently.</p>
+                    <div class="step-content step-content-right"></div>
                 </div>
-                <div class="process-connector"><i class="fas fa-chevron-right"></i></div>
                 <div class="process-step">
+                    <div class="step-content step-content-left"></div>
                     <div class="step-icon-wrap">
                         <div class="step-icon"><i class="fas fa-certificate"></i></div>
                         <span class="step-number">06</span>
                     </div>
-                    <h3 class="step-title">Approval Support</h3>
-                    <p class="step-desc">We stay involved through follow-up, compliance closure, and final outcome handling.</p>
+                    <div class="step-content step-content-right">
+                        <h3 class="step-title">Approval Support</h3>
+                        <p class="step-desc">We stay involved through follow-up, compliance closure, and final outcome handling.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section service-cta-section">
         <div class="container">
-            <div class="cta-banner">
-                <div class="cta-glow"></div>
-                <div class="cta-content">
-                    <div class="cta-text">
+            <div class="cta-banner service-cta-banner">
+                <div class="service-cta-main">
+                    <span class="service-cta-tag"><i class="fas fa-bullseye"></i> Let's plan your next step</span>
+                    <div class="cta-text service-cta-text">
                         <h2 class="cta-title">Need a Service Plan for Your Institution?</h2>
                         <p class="cta-desc">
                             Share your institution type and approval goal, and we can help define the right starting point.
                         </p>
                     </div>
-                    <a href="index.html#contact" class="btn btn-outline-white btn-lg">
-                        Schedule a Consultation <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="service-cta-actions">
+                        <a href="index.html#contact" class="service-cta-primary">Schedule a Consultation <i class="fas fa-arrow-right"></i></a>
+                        <a href="index.html#contact" class="service-cta-secondary">Talk to an Expert <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-cta-benefits" aria-label="Consultation benefits">
+                    <div class="service-cta-benefit">
+                        <span class="service-cta-benefit-icon"><i class="fas fa-bullseye"></i></span>
+                        <div><h3>Personalized Guidance</h3><p>Solutions tailored to your institution’s goals.</p></div>
+                    </div>
+                    <div class="service-cta-benefit">
+                        <span class="service-cta-benefit-icon"><i class="fas fa-shield-halved"></i></span>
+                        <div><h3>Regulatory Expertise</h3><p>In-depth knowledge of boards and compliance.</p></div>
+                    </div>
+                    <div class="service-cta-benefit">
+                        <span class="service-cta-benefit-icon"><i class="far fa-clock"></i></span>
+                        <div><h3>Faster Approvals</h3><p>Streamlined processes for timely results.</p></div>
+                    </div>
                 </div>
             </div>
         </div>
