@@ -690,6 +690,7 @@ section {
 
 .hero-description {
     font-size: clamp(1rem, 1.1vw, 1.06rem);
+    text-align: justify;
     color: var(--gray-600);
     line-height: 1.75;
     max-width: 560px;
@@ -1434,6 +1435,12 @@ section {
     justify-content: flex-end;
 }
 
+/* Specific hero offset for page-specific layouts like About Us */
+.page-hero .hero-content {
+    margin-top: 1.25rem;
+}
+
+
 #services-home .hero-trust {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1996,6 +2003,130 @@ section {
     margin-bottom: var(--space-lg);
 }
 
+.about-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: var(--space-3xl);
+}
+
+.about-feature-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: var(--space-xl);
+    background: #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.04);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.about-feature-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(29, 78, 216, 0.28);
+    box-shadow: 0 22px 48px rgba(29, 78, 216, 0.12);
+}
+
+.about-feature-card h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    color: var(--gray-900);
+}
+
+.about-feature-card p {
+    margin: 0;
+    color: var(--gray-600);
+    line-height: 1.75;
+    font-size: 0.95rem;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--primary-500);
+    font-size: 1.05rem;
+}
+
+.about-story-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: var(--space-3xl);
+}
+
+.about-story-card-advanced {
+    background: #ffffff;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    box-shadow: 0 22px 55px rgba(15, 23, 42, 0.08);
+    padding: var(--space-3xl);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.about-story-card-advanced:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 70px rgba(15, 23, 42, 0.14);
+    border-color: rgba(29, 78, 216, 0.22);
+}
+
+.story-card-list {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: var(--space-lg);
+}
+
+.story-point {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.story-point:last-child {
+    border-bottom: 0;
+}
+
+.story-point-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(59, 130, 246, 0.10);
+    color: var(--primary-500);
+    font-size: 1.1rem;
+}
+
+.story-point h4 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+    color: var(--gray-900);
+}
+
+.story-point p {
+    margin: 0;
+    color: var(--gray-600);
+    line-height: 1.75;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    .about-story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .team-section {
     padding: var(--space-4xl) 0;
     background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
@@ -2005,6 +2136,14 @@ section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-xl);
+}
+
+.team-grid.lead-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.team-grid.member-grid {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .team-card {
@@ -2024,8 +2163,8 @@ section {
 }
 
 .team-avatar {
-    width: 72px;
-    height: 72px;
+    width: 112px;
+    height: 112px;
     margin: 0 auto var(--space-lg);
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
@@ -2033,8 +2172,16 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     box-shadow: inset 0 0 0 1px rgba(29, 78, 216, 0.08);
+}
+
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
 }
 
 .team-name {
