@@ -27,6 +27,36 @@ if (container) {
     container.innerHTML = navbarHTML;
 }
 
+// Mobile menu toggle functionality
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+const navbar = document.getElementById('navbar');
+
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    const navItems = navLinks.querySelectorAll('.nav-link');
+    navItems.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+}
+
+// Add scroll effect to navbar
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
 // Highlight the active page based on URL
 const currentPath = window.location.pathname;
 if (currentPath.includes('services.html')) {

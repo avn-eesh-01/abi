@@ -491,6 +491,88 @@ section {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .nav-container {
+        height: auto;
+        padding: 0 1rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-logo {
+        padding: 1rem 0;
+    }
+
+    .nav-logo img {
+        height: 50px !important;
+        width: auto !important;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #ffffff;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+        z-index: 999;
+        padding: 0;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 16px 1.5rem !important;
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-link.active {
+        background: var(--primary-50);
+        color: var(--primary-600);
+        border-left: 4px solid var(--primary-500);
+        padding-left: calc(1.5rem - 4px) !important;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+}
+
 /* ============================================
    HERO SECTION
    ============================================ */
@@ -6338,4 +6420,580 @@ a.contact-strip-value:hover { color: #1d4ed8; }
     .contact-form-row { grid-template-columns: 1fr; }
     .contact-office-info { padding: 30px 24px; }
     .contact-info-col { flex-direction: column; }
+}
+
+/* ============================================
+   COMPREHENSIVE MOBILE RESPONSIVE (768px and below)
+   ============================================ */
+@media (max-width: 768px) {
+    /* General */
+    section {
+        padding: clamp(2rem, 3vw, 3rem) 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: var(--space-lg);
+        gap: var(--space-md);
+    }
+
+    .stat-card {
+        padding: 0 var(--space-md);
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .stat-card:not(:last-child)::after {
+        display: none;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
+    }
+
+    .stat-number {
+        font-size: 1.2rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    .service-card {
+        padding: var(--space-xl) var(--space-md);
+        min-height: 280px;
+    }
+
+    .service-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.35rem;
+    }
+
+    .service-title {
+        font-size: 1rem;
+    }
+
+    .service-desc {
+        font-size: 0.9rem;
+        margin-bottom: var(--space-md);
+    }
+
+    /* Team Grid */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid.lead-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid.member-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    /* Categories Grid */
+    .categories-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .category-card {
+        min-height: 320px;
+        padding: var(--space-lg);
+    }
+
+    .category-name {
+        font-size: 1.4rem;
+    }
+
+    .category-desc {
+        font-size: 0.85rem;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: clamp(2rem, 3vw, 2.8rem);
+    }
+
+    .hero-description {
+        font-size: clamp(0.9rem, 1vw, 1rem);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Section Header */
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Expertise Grid */
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .expertise-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    /* About Story Grid */
+    .about-story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Category Service Grid */
+    .category-service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Expertise Top Grid */
+    .expertise-top {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .expertise-visual {
+        height: 240px;
+    }
+
+    .coverage-orbit {
+        width: 240px;
+        height: 240px;
+    }
+
+    .coverage-campus {
+        width: 260px;
+    }
+
+    /* Intro Grid */
+    .categories-intro-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .categories-intro-image img {
+        min-height: 300px;
+    }
+
+    .categories-intro-points {
+        grid-template-columns: 1fr;
+    }
+
+    /* Page Hero */
+    .categories-page-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-page-title {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+    }
+
+    .categories-page-desc {
+        font-size: 0.9rem;
+    }
+
+    /* Buttons */
+    .btn-lg {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL MOBILE (480px and below)
+   ============================================ */
+@media (max-width: 480px) {
+    /* General */
+    section {
+        padding: 1.5rem 0;
+    }
+
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .navbar {
+        height: auto;
+    }
+
+    .nav-container {
+        padding: 0 0.75rem;
+        height: auto;
+    }
+
+    .nav-logo img {
+        height: 45px !important;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        padding: var(--space-md);
+        gap: var(--space-sm);
+    }
+
+    .stat-card {
+        padding: 0 var(--space-sm);
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .services-section .section-header {
+        padding: var(--space-lg) var(--space-sm) 0;
+        margin-bottom: var(--space-xl);
+    }
+
+    .service-card {
+        padding: var(--space-lg);
+        min-height: auto;
+    }
+
+    .service-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+
+    .service-title {
+        font-size: 0.95rem;
+    }
+
+    .service-desc {
+        font-size: 0.85rem;
+    }
+
+    /* Team Grid */
+    .team-grid,
+    .team-grid.lead-grid,
+    .team-grid.member-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    .team-avatar {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto var(--space-md);
+        font-size: 1.2rem;
+    }
+
+    .team-name {
+        font-size: 1rem;
+    }
+
+    .team-role {
+        font-size: 0.75rem;
+    }
+
+    /* Categories Grid */
+    .categories-cards {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .category-card {
+        min-height: 280px;
+        padding: var(--space-md);
+    }
+
+    .category-name {
+        font-size: 1.2rem;
+    }
+
+    .category-desc {
+        font-size: 0.8rem;
+    }
+
+    .category-chip {
+        font-size: 0.65rem;
+        padding: 5px 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 2rem 0 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: var(--space-md);
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: var(--space-lg);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-content {
+        padding: 0;
+        margin-top: 2rem;
+    }
+
+    .hero-bg-image {
+        opacity: 0.2;
+    }
+
+    /* Section Header */
+    .section-tag {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-md);
+    }
+
+    .section-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-xl);
+    }
+
+    /* Expertise Card */
+    .expertise-shell {
+        padding: var(--space-xl);
+        margin: 0 -0.75rem;
+        border-radius: 12px;
+    }
+
+    .expertise-card {
+        padding: 1rem;
+        min-height: auto;
+    }
+
+    .expertise-card h3 {
+        font-size: 1rem;
+    }
+
+    .expertise-card p {
+        font-size: 0.85rem;
+    }
+
+    .coverage-card-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .expertise-grid {
+        gap: var(--space-md);
+    }
+
+    /* About Feature Cards */
+    .about-feature-card {
+        padding: var(--space-lg);
+    }
+
+    .about-feature-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .about-feature-card p {
+        font-size: 0.85rem;
+    }
+
+    .feature-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+
+    /* Category Service Grid */
+    .category-service-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .category-service-card {
+        padding: var(--space-lg);
+    }
+
+    .category-service-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+
+    .category-service-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .category-service-card li {
+        font-size: 0.8rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+
+    .btn-lg {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+
+    .btn i {
+        font-size: 0.7rem;
+    }
+
+    /* Contact Sections */
+    .contact-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-col {
+        flex-direction: column;
+    }
+
+    .contact-info-card,
+    .contact-portal-card,
+    .contact-social-card {
+        width: 100%;
+    }
+
+    .contact-strip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-office-info {
+        padding: 20px 16px;
+        border-right: none;
+        border-bottom: 1px solid #e8edf5;
+    }
+
+    .contact-office-title {
+        font-size: 1.3rem;
+    }
+
+    .contact-office-details {
+        gap: 16px;
+    }
+
+    .contact-office-item strong {
+        font-size: 0.75rem;
+    }
+
+    .contact-office-item span {
+        font-size: 0.85rem;
+    }
+
+    .contact-map-embed {
+        min-height: 300px;
+    }
+
+    .page-hero .hero-content {
+        margin-top: 1rem;
+    }
+
+    .page-hero .hero-visual {
+        min-height: 320px;
+    }
+
+    .categories-hero-title .hero-title-highlight::after {
+        width: 100%;
+    }
+
+    .categories-page-actions {
+        flex-direction: column;
+    }
+
+    .categories-page-actions .btn {
+        width: 100%;
+    }
+
+    .categories-page-stats {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .categories-stat {
+        width: 100%;
+    }
+
+    .visual-feature-cards {
+        position: static;
+        max-width: 100%;
+        transform: none;
+        gap: var(--space-md);
+        margin-top: var(--space-lg);
+    }
+
+    .visual-feature-card {
+        animation: none;
+        opacity: 1;
+    }
+
+    .visual-caption-card {
+        position: static;
+        flex-direction: column;
+        text-align: center;
+        margin-top: var(--space-lg);
+    }
+
+    .visual-caption-icon {
+        margin: 0 auto;
+    }
+
+    .visual-caption-text {
+        width: 100%;
+    }
 }
