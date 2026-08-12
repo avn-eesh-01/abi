@@ -15,7 +15,8 @@ const navbarHTML = `
                 Apply for Affiliation <i class="fas fa-arrow-right"></i>
             </a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
+                <i class="fas fa-bars toggle-icon-bars" style="font-size: 1.5rem; color: var(--gray-700);"></i>
+                <i class="fas fa-xmark toggle-icon-cross" style="font-size: 1.5rem; color: var(--gray-700); display: none;"></i>
             </button>
         </div>
     </nav>
@@ -33,9 +34,20 @@ const navLinks = document.getElementById('navLinks');
 const navbar = document.getElementById('navbar');
 
 if (mobileToggle) {
+    const iconBars = mobileToggle.querySelector('.toggle-icon-bars');
+    const iconCross = mobileToggle.querySelector('.toggle-icon-cross');
+
     mobileToggle.addEventListener('click', () => {
         mobileToggle.classList.toggle('active');
         navLinks.classList.toggle('active');
+        
+        if (mobileToggle.classList.contains('active')) {
+            iconBars.style.display = 'none';
+            iconCross.style.display = 'block';
+        } else {
+            iconBars.style.display = 'block';
+            iconCross.style.display = 'none';
+        }
     });
 
     // Close menu when a link is clicked
@@ -44,6 +56,8 @@ if (mobileToggle) {
         link.addEventListener('click', () => {
             mobileToggle.classList.remove('active');
             navLinks.classList.remove('active');
+            iconBars.style.display = 'block';
+            iconCross.style.display = 'none';
         });
     });
 }

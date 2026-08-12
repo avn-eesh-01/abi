@@ -469,27 +469,7 @@ section {
     z-index: 1001;
 }
 
-.mobile-toggle span {
-    width: 24px;
-    height: 2.5px;
-    background: var(--gray-700);
-    border-radius: 2px;
-    transition: all var(--transition-base);
-    transform-origin: center;
-}
 
-.mobile-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mobile-toggle.active span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-}
-
-.mobile-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
@@ -6995,5 +6975,47 @@ a.contact-strip-value:hover { color: #1d4ed8; }
 
     .visual-caption-text {
         width: 100%;
+    }
+}
+
+/* --- Global Mobile Optimizations --- */
+@media (max-width: 768px) {
+    /* Disable transitions and animations globally on mobile */
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    /* Disable specific hover transforms and box-shadows */
+    .service-card:hover, .category-card:hover, .process-step:hover, .cta-card:hover, .btn:hover, .faq-question:hover, .nav-link:hover::after {
+        transform: none !important;
+        box-shadow: none !important;
+        width: 0 !important; /* For nav-link::after hover */
+    }
+    
+    /* Typography adjustments */
+    h1, .hero-title { font-size: 2.2rem !important; line-height: 1.2 !important; }
+    h2, .section-title, .cta-left h2 { font-size: 1.8rem !important; line-height: 1.3 !important; }
+    h3, .service-title, .category-name, .step-title, .faq-category-title { font-size: 1.4rem !important; line-height: 1.4 !important; }
+    p, .service-desc, .category-desc, .step-desc, .faq-answer-content p, .cta-left p { font-size: 0.95rem !important; }
+    
+    /* Layout and Card Sizes */
+    .services-grid, .categories-cards, .process-grid, .features, .cta-container {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.2rem !important;
+    }
+    .service-card, .category-card, .cta-card, .faq-item {
+        padding: 1.2rem !important;
+        margin-bottom: 0 !important;
+    }
+    .hero-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .hero-buttons .btn {
+        width: 100% !important;
+        text-align: center !important;
     }
 }
