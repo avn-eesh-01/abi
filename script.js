@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ========== NAVBAR SCROLL EFFECT ==========
     const navbar = document.getElementById('navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id]');
 
     function handleScroll() {
         // Sticky navbar
@@ -16,33 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
-        }
-
-        // Active nav link highlight for in-page scrolling
-        let currentSection = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
-            if (window.scrollY >= sectionTop) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-
-        const isHomePage = !window.location.pathname.match(/\/(services|affiliation-categories|about|contact|privacy-policy|terms-of-service|demo|demo1)(?:\/|$)/);
-
-        if (currentSection && isHomePage) {
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if ((href === './' || href === '../' || href.endsWith('/')) && currentSection === 'home') {
-                    link.classList.add('active');
-                } else if (href.includes('services')) {
-                    link.classList.remove('active');
-                } else if (href.includes('#')) {
-                    link.classList.remove('active');
-                    if (href.endsWith(`#${currentSection}`)) {
-                        link.classList.add('active');
-                    }
-                }
-            });
         }
     }
 
