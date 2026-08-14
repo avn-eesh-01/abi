@@ -2,16 +2,16 @@ const navbarHTML = `
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <img src="assets/logo-2-abi.png" alt="Affiliation Bureau of India" style="height: 65px; width: auto;">
+                <img src="../assets/logo-2-abi.png" alt="Affiliation Bureau of India" style="height: 65px; width: auto;">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
                 <li><a href="services.html" class="nav-link" id="nav-services">Services</a></li>
                 <li><a href="affiliation-categories.html" class="nav-link" id="nav-categories">Affiliation Categories</a></li>
                 <li><a href="about.html" class="nav-link" id="nav-about">About Us</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <a href="index.html#contact" class="btn btn-primary nav-cta">
+            <a href="contact.html#contact" class="btn btn-primary nav-cta">
                 Apply for Affiliation <i class="fas fa-arrow-right"></i>
             </a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
@@ -34,20 +34,9 @@ const navLinks = document.getElementById('navLinks');
 const navbar = document.getElementById('navbar');
 
 if (mobileToggle) {
-    const iconBars = mobileToggle.querySelector('.toggle-icon-bars');
-    const iconCross = mobileToggle.querySelector('.toggle-icon-cross');
-
     mobileToggle.addEventListener('click', () => {
         mobileToggle.classList.toggle('active');
         navLinks.classList.toggle('active');
-        
-        if (mobileToggle.classList.contains('active')) {
-            iconBars.style.display = 'none';
-            iconCross.style.display = 'block';
-        } else {
-            iconBars.style.display = 'block';
-            iconCross.style.display = 'none';
-        }
     });
 
     // Close menu when a link is clicked
@@ -56,8 +45,6 @@ if (mobileToggle) {
         link.addEventListener('click', () => {
             mobileToggle.classList.remove('active');
             navLinks.classList.remove('active');
-            iconBars.style.display = 'block';
-            iconCross.style.display = 'none';
         });
     });
 }

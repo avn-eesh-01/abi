@@ -7018,4 +7018,27 @@ a.contact-strip-value:hover { color: #1d4ed8; }
         width: 100% !important;
         text-align: center !important;
     }
+    
+    /* Ensure Nav Links appear correctly when active */
+    .nav-links.active {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+    }
+
+    /* Handle Toggle Icon Switching */
+    .mobile-toggle .toggle-icon-bars {
+        display: block !important;
+    }
+    .mobile-toggle .toggle-icon-cross {
+        display: none !important;
+    }
+    .mobile-toggle.active .toggle-icon-bars {
+        display: none !important;
+    }
+    .mobile-toggle.active .toggle-icon-cross {
+        display: block !important;
+    }
 }
