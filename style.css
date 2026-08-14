@@ -2385,12 +2385,10 @@ section {
 .category-card:hover {
     transform: translateY(-8px);
     border-color: rgba(147, 197, 253, 0.42);
-    box-shadow: 0 28px 55px rgba(37, 99, 235, 0.18);
 }
 
 .category-card:hover::before {
     transform: scale(1.08);
-    filter: blur(16px);
 }
 
 .category-card:hover::after {

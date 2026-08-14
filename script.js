@@ -27,12 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        if (currentSection && (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/abi/') || window.location.pathname.endsWith('/'))) {
+        const isHomePage = !window.location.pathname.match(/\/(services|affiliation-categories|about|contact|privacy-policy|terms-of-service|demo|demo1)(?:\/|$)/);
+
+        if (currentSection && isHomePage) {
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
-                if (href === 'index.html' && currentSection === 'home') {
+                if ((href === './' || href === '../' || href.endsWith('/')) && currentSection === 'home') {
                     link.classList.add('active');
-                } else if (href === 'services.html') {
+                } else if (href.includes('services')) {
                     link.classList.remove('active');
                 } else if (href.includes('#')) {
                     link.classList.remove('active');
