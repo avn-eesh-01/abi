@@ -411,7 +411,7 @@ section {
     gap: 4px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 992px) {
     .nav-links {
         position: absolute;
         left: 50%;
@@ -472,7 +472,7 @@ section {
 
 
 /* Mobile Menu Styles */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .mobile-toggle {
         display: flex;
     }
@@ -6977,18 +6977,35 @@ a.contact-strip-value:hover { color: #1d4ed8; }
 }
 
 /* --- Global Mobile Optimizations --- */
-@media (max-width: 768px) {
-    /* Disable transitions and animations globally on mobile */
-    *, *::before, *::after {
-        transition: none !important;
-        animation: none !important;
-    }
-    
-    /* Disable specific hover transforms and box-shadows */
+@media (max-width: 991px) {
+    /* Disable specific hover transforms and box-shadows to ensure smooth touch experience */
     .service-card:hover, .category-card:hover, .process-step:hover, .cta-card:hover, .btn:hover, .faq-question:hover, .nav-link:hover::after {
         transform: none !important;
         box-shadow: none !important;
         width: 0 !important; /* For nav-link::after hover */
+    }
+    
+    /* Prevent sticky hover backgrounds on mobile */
+    .btn-primary:hover {
+        background: var(--primary-500) !important;
+        border-color: var(--primary-500) !important;
+        color: #fff !important;
+    }
+    .btn-outline:hover {
+        background: transparent !important;
+        color: var(--primary-500) !important;
+        border-color: var(--primary-500) !important;
+    }
+    .btn-outline-white:hover {
+        background: transparent !important;
+        color: #fff !important;
+        border-color: rgba(255, 255, 255, 0.6) !important;
+    }
+    .nav-link:hover {
+        color: var(--gray-600) !important;
+    }
+    .nav-link.active {
+        color: var(--primary-600) !important;
     }
     
     /* Typography adjustments */
@@ -6997,6 +7014,15 @@ a.contact-strip-value:hover { color: #1d4ed8; }
     h3, .service-title, .category-name, .step-title, .faq-category-title { font-size: 1.4rem !important; line-height: 1.4 !important; }
     p, .service-desc, .category-desc, .step-desc, .faq-answer-content p, .cta-left p { font-size: 0.95rem !important; }
     
+    /* Hero section fixes for mobile visibility */
+    .hero {
+        padding-top: 120px !important;
+    }
+    .hero-content {
+        padding-right: 0 !important;
+        margin-top: 0 !important;
+    }
+
     /* Layout and Card Sizes */
     .services-grid, .categories-cards, .process-grid, .features, .cta-container {
         grid-template-columns: 1fr !important;

@@ -10,7 +10,7 @@ const navbarHTML = `
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="${ROOT}" class="nav-link" id="nav-home">Home</a></li>
-                <li><a href="${ROOT}services/" class="nav-link" id="nav-services">Services</a></li>
+                <li><a href="./services/" class="nav-link" id="nav-services">Services</a></li>
                 <li><a href="${ROOT}affiliation-categories/" class="nav-link" id="nav-categories">Affiliation Categories</a></li>
                 <li><a href="${ROOT}about/" class="nav-link" id="nav-about">About Us</a></li>
                 <li><a href="${ROOT}contact/" class="nav-link" id="nav-contact">Contact</a></li>
