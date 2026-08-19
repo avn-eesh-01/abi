@@ -6978,6 +6978,54 @@ a.contact-strip-value:hover { color: #1d4ed8; }
 
 /* --- Global Mobile Optimizations --- */
 @media (max-width: 991px) {
+    html:has(body.menu-open),
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .navbar {
+        --mobile-nav-height: 82px;
+    }
+
+    .nav-container {
+        height: var(--mobile-nav-height);
+        min-height: var(--mobile-nav-height);
+        flex-wrap: nowrap;
+    }
+
+    .nav-logo {
+        padding: 0;
+    }
+
+    .nav-links,
+    .nav-links.active {
+        display: flex !important;
+        top: var(--mobile-nav-height) !important;
+        bottom: 0;
+        max-height: calc(100dvh - var(--mobile-nav-height));
+        min-height: calc(100dvh - var(--mobile-nav-height));
+        padding: 0 !important;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links {
+        pointer-events: none;
+    }
+
+    .nav-links.active {
+        pointer-events: auto;
+    }
+
+    .mobile-toggle {
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+    }
+
     /* Disable specific hover transforms and box-shadows to ensure smooth touch experience */
     .service-card:hover, .category-card:hover, .process-step:hover, .cta-card:hover, .btn:hover, .faq-question:hover, .nav-link:hover::after {
         transform: none !important;
@@ -7064,5 +7112,147 @@ a.contact-strip-value:hover { color: #1d4ed8; }
     }
     .mobile-toggle.active .toggle-icon-cross {
         display: block !important;
+    }
+}
+
+/* Small screens use touch states only.  This neutralizes desktop hover treatments
+   that otherwise remain "stuck" after a tap. */
+@media (max-width: 991px) {
+    .nav-logo:hover .logo-icon,
+    .btn:hover,
+    .avatar:hover,
+    .stat-card:hover .stat-icon,
+    .service-card:hover,
+    .service-card:hover .service-icon,
+    .expertise-card:hover,
+    .about-feature-card:hover,
+    .about-story-card-advanced:hover,
+    .team-card:hover,
+    .category-card:hover,
+    .visual-feature-card:hover,
+    .category-service-card:hover,
+    .category-compact-card:hover,
+    .college-service-card:hover,
+    .university-showcase-card:hover,
+    .process-step:hover .step-icon,
+    .process-step:hover .step-number,
+    .step-content:hover,
+    .process-step:hover .step-content:not(:empty),
+    .cta-card:hover,
+    .faq-item:hover,
+    .faq-question:hover,
+    .legal-intro-card:hover,
+    .contact-strip-card:hover,
+    .contact-dept-item:hover,
+    .contact-portal-btn:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .service-link:hover i,
+    .category-hover-button:hover i,
+    .college-service-card:hover .college-service-arrow,
+    .contact-dept-item:hover .contact-dept-arrow {
+        transform: none !important;
+    }
+
+    .service-card:hover {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(244, 248, 255, 0.98) 100%) !important;
+        color: inherit !important;
+        border-color: rgba(148, 163, 184, 0.18) !important;
+    }
+
+    .service-card:hover .service-title { color: var(--gray-800) !important; }
+    .service-card:hover .service-desc { color: var(--gray-500) !important; }
+    .service-card:hover .service-link { color: var(--primary-500) !important; }
+    .service-card:hover .service-points li { color: var(--gray-600) !important; }
+    .service-card:hover .service-points li::before { background: var(--primary-500) !important; box-shadow: none !important; }
+    .service-card:hover .service-icon { background: linear-gradient(135deg, #eef4ff 0%, #dfe9ff 100%) !important; color: var(--primary-500) !important; }
+    .service-card:hover .service-icon::before { opacity: 0 !important; animation-play-state: paused !important; }
+
+    .category-card:hover .category-card-content {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+
+    .category-card:hover .category-hover-cta { opacity: 0 !important; }
+    .category-card:hover .category-hover-box { transform: translateY(14px) scale(0.96) !important; }
+
+    .process-step:hover .step-icon {
+        background: var(--primary-50) !important;
+        color: var(--primary-500) !important;
+        border-color: var(--primary-100) !important;
+    }
+
+    .process-step:hover .step-number { background: var(--primary-500) !important; }
+
+    .step-content:hover,
+    .process-step:hover .step-content:not(:empty) {
+        background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%) !important;
+        border-color: rgba(29, 78, 216, 0.12) !important;
+    }
+
+    .step-content:hover .step-title,
+    .process-step:hover .step-content:not(:empty) .step-title { color: var(--gray-800) !important; }
+
+    .step-content:hover .step-desc,
+    .process-step:hover .step-content:not(:empty) .step-desc { color: var(--gray-500) !important; }
+
+    .social-link:hover {
+        background: transparent !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .college-service-card:hover .college-service-arrow {
+        background: transparent !important;
+        border-color: transparent !important;
+        color: inherit !important;
+    }
+
+    .university-showcase-card:hover .explore-btn {
+        background: transparent !important;
+        border-color: rgba(255, 255, 255, 0.4) !important;
+        color: #fff !important;
+    }
+
+    .contact-portal-btn:hover {
+        background: rgba(255,255,255,0.15) !important;
+        border-color: rgba(255,255,255,0.3) !important;
+        color: #fff !important;
+    }
+
+    .expertise-card:hover { background: rgba(255, 255, 255, 0.045) !important; }
+    .faq-item:hover { border-color: var(--gray-200) !important; }
+    .faq-question:hover { color: var(--gray-800) !important; }
+    .legal-intro-card:hover { background: #ffffff !important; }
+    .contact-strip-card:hover,
+    .contact-dept-item:hover { background: transparent !important; }
+
+    .service-cta-primary:hover,
+    .service-cta-secondary:hover { color: inherit !important; }
+
+    .nav-link:hover,
+    .page-breadcrumb a:hover,
+    .footer-links a:hover,
+    .footer-bottom-links a:hover,
+    a.contact-strip-value:hover,
+    .contact-office-item a:hover {
+        color: inherit !important;
+    }
+
+    .nav-link:hover::after,
+    .footer-links a:hover::before,
+    .service-card:hover::after,
+    .service-card:hover::before,
+    .category-card:hover::before,
+    .category-card:hover::after,
+    .category-service-card:hover::before,
+    .category-compact-card:hover::before,
+    .category-service-card:hover::after,
+    .category-compact-card:hover::after {
+        opacity: 0 !important;
+        width: 0 !important;
     }
 }

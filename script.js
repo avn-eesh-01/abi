@@ -20,27 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    // ========== MOBILE MENU TOGGLE ==========
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navLinksContainer = document.getElementById('navLinks');
-
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
-            navLinksContainer.classList.toggle('active');
-            document.body.style.overflow = navLinksContainer.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Close menu on link click
-        navLinksContainer.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileToggle.classList.remove('active');
-                navLinksContainer.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-    }
-
     // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
