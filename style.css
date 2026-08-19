@@ -4685,6 +4685,11 @@ section {
     flex-shrink: 0;
 }
 
+.footer-contact a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -5879,7 +5884,8 @@ section {
     gap: 12px;
 }
 
-.contact-hero-pills span {
+.contact-hero-pills span,
+.contact-hero-pills a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -5890,6 +5896,7 @@ section {
     font-size: 0.9rem;
     font-weight: 500;
     color: #fff;
+    text-decoration: none;
 }
 
 /* Info Strip */

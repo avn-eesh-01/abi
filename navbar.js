@@ -6,7 +6,7 @@ const navbarHTML = `
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="${ROOT}" class="nav-logo">
-                <img src="${ROOT}assets/logo-2-abi.png" alt="Affiliation Bureau of India" style="height: 65px; width: auto;">
+                <img src="${ROOT}assets/logo.png" alt="Affiliation Bureau of India" style="height: 65px; width: auto;">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="${ROOT}" class="nav-link" id="nav-home">Home</a></li>
