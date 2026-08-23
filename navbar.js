@@ -12,8 +12,9 @@ const navbarHTML = `
                 <li><a href="${ROOT}" class="nav-link" id="nav-home">Home</a></li>
                 <li><a href="${ROOT}services/" class="nav-link" id="nav-services">Services</a></li>
                 <li class="nav-dropdown">
-                    <button class="nav-link nav-dropdown-toggle" id="nav-categories" type="button" aria-expanded="false" aria-controls="categoryMenu">
-                        Affiliation Categories <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    <a href="${ROOT}affiliation-categories/" class="nav-link nav-dropdown-overview" id="nav-categories">Affiliation Categories</a>
+                    <button class="nav-dropdown-toggle" id="nav-categories-toggle" type="button" aria-label="Open affiliation category menu" aria-expanded="false" aria-controls="categoryMenu">
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </button>
                     <ul class="nav-dropdown-menu" id="categoryMenu" aria-label="Affiliation categories">
                         <li><a href="${ROOT}affiliation-categories/#schools" class="nav-dropdown-link">School Affiliation</a></li>
@@ -82,7 +83,7 @@ if (mobileToggle && navLinks) {
     });
 }
 
-const categoryToggle = document.getElementById('nav-categories');
+const categoryToggle = document.getElementById('nav-categories-toggle');
 const categoryDropdown = categoryToggle?.closest('.nav-dropdown');
 
 if (categoryToggle && categoryDropdown) {

@@ -571,16 +571,28 @@ section {
 
 .nav-dropdown {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .nav-dropdown-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    justify-content: center;
+    width: 28px;
+    height: 34px;
+    margin-left: -10px;
+    padding: 0;
     border: 0;
     background: transparent;
+    color: var(--gray-600);
     cursor: pointer;
     font-family: inherit;
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown:focus-within .nav-dropdown-toggle {
+    color: var(--primary-600);
 }
 
 .nav-dropdown-toggle .fa-chevron-down {
@@ -747,6 +759,27 @@ section {
         visibility: visible;
         pointer-events: auto;
         transform: none;
+    }
+
+    .nav-dropdown {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .nav-dropdown-overview {
+        flex: 1;
+        width: auto;
+    }
+
+    .nav-dropdown-toggle {
+        width: 56px;
+        height: auto;
+        margin: 0;
+    }
+
+    .nav-dropdown-menu {
+        flex-basis: 100%;
+        width: 100%;
     }
 
     .nav-dropdown.open .nav-dropdown-menu {
