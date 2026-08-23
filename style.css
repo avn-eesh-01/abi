@@ -6047,7 +6047,7 @@ section {
 
 .contact-strip-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 0.95fr 1.15fr 1.15fr 0.95fr;
     gap: 0;
     background: #fff;
     border-radius: 20px;
@@ -6061,6 +6061,7 @@ section {
     align-items: flex-start;
     gap: 16px;
     padding: 28px 24px;
+    min-width: 0;
     border-right: 1px solid #e8edf5;
     transition: background 0.2s;
 }
@@ -6086,6 +6087,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 3px;
+    min-width: 0;
 }
 
 .contact-strip-label {
@@ -6102,6 +6104,13 @@ section {
     color: #0f172a;
     text-decoration: none;
     word-break: break-all;
+}
+
+.contact-strip-value[href^="mailto:"] {
+    font-size: clamp(0.8rem, 0.75vw, 0.9rem);
+    letter-spacing: -0.015em;
+    word-break: normal;
+    overflow-wrap: anywhere;
 }
 
 a.contact-strip-value:hover { color: #1d4ed8; }

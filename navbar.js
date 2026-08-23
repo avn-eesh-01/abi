@@ -12,7 +12,7 @@ const navbarHTML = `
                 <li><a href="${ROOT}" class="nav-link" id="nav-home">Home</a></li>
                 <li><a href="${ROOT}services/" class="nav-link" id="nav-services">Services</a></li>
                 <li class="nav-dropdown">
-                    <a href="${ROOT}affiliation-categories/" class="nav-link nav-dropdown-overview" id="nav-categories">Affiliation Categories</a>
+                    <a href="${ROOT}affiliation-categories/" class="nav-link nav-dropdown-overview" id="nav-categories">Affiliation/Accreditation</a>
                     <button class="nav-dropdown-toggle" id="nav-categories-toggle" type="button" aria-label="Open affiliation category menu" aria-expanded="false" aria-controls="categoryMenu">
                         <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </button>
