@@ -11,7 +11,16 @@ const navbarHTML = `
             <ul class="nav-links" id="navLinks">
                 <li><a href="${ROOT}" class="nav-link" id="nav-home">Home</a></li>
                 <li><a href="${ROOT}services/" class="nav-link" id="nav-services">Services</a></li>
-                <li><a href="${ROOT}affiliation-categories/" class="nav-link" id="nav-categories">Affiliation Categories</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle" id="nav-categories" type="button" aria-expanded="false" aria-controls="categoryMenu">
+                        Affiliation Categories <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="nav-dropdown-menu" id="categoryMenu" aria-label="Affiliation categories">
+                        <li><a href="${ROOT}affiliation-categories/#schools" class="nav-dropdown-link">School Affiliation</a></li>
+                        <li><a href="${ROOT}affiliation-categories/#colleges" class="nav-dropdown-link">College Affiliation</a></li>
+                        <li><a href="${ROOT}affiliation-categories/#universities" class="nav-dropdown-link">University Affiliation</a></li>
+                    </ul>
+                </li>
                 <li><a href="${ROOT}about/" class="nav-link" id="nav-about">About Us</a></li>
                 <li><a href="${ROOT}contact/" class="nav-link" id="nav-contact">Contact</a></li>
             </ul>
@@ -57,7 +66,7 @@ if (mobileToggle && navLinks) {
     mobileToggle.addEventListener('click', toggleMenu);
 
     // Close menu when a link is clicked
-    const navItems = navLinks.querySelectorAll('.nav-link');
+    const navItems = navLinks.querySelectorAll('.nav-link, .nav-dropdown-link');
     navItems.forEach(link => {
         link.addEventListener('click', () => {
             closeMenu();
@@ -70,6 +79,30 @@ if (mobileToggle && navLinks) {
 
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 992) closeMenu();
+    });
+}
+
+const categoryToggle = document.getElementById('nav-categories');
+const categoryDropdown = categoryToggle?.closest('.nav-dropdown');
+
+if (categoryToggle && categoryDropdown) {
+    const closeCategoryMenu = () => {
+        categoryDropdown.classList.remove('open');
+        categoryToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    categoryToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = categoryDropdown.classList.toggle('open');
+        categoryToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!categoryDropdown.contains(event.target)) closeCategoryMenu();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeCategoryMenu();
     });
 }
 
